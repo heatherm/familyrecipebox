@@ -1,15 +1,18 @@
 =link_to text_with_icon('Back to my recipes', 'arrow-left'), recipes_url
 h2=@recipe.title.capitalize
-br
-- if source = @recipe.source
+=link_to text_with_icon("Edit", 'pencil'), edit_recipe_url(@recipe)
+- if source = @recipe.source.presence
   h4 From
   =source
-- if url = @recipe.url
+- if url = @recipe.url.presence
   h4 URL
   =link_to text_with_icon(url, 'map-marker'), url
-- if ingredients = @recipe.ingredients
+- if variations = @recipe.variations.presence
+  h4 Variations
+  pre=variations
+- if ingredients = @recipe.ingredients.presence
   h4 Ingredients
   pre=ingredients
-- if instructions = @recipe.instructions
+- if instructions = @recipe.instructions.presence
   h4 Instructions
   pre=instructions
