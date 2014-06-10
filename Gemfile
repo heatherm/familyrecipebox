@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'turbolinks'
 gem 'simple_form', '~> 3.1.0.rc1'                      # Bootstrap 3 support
+gem 'bootstrap_forms'
 gem 'uglifier'
 gem 'sorcery'
 
