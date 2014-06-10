@@ -1,0 +1,15 @@
+=link_to "< Back to my recipes", recipes_url
+h1=@recipe.title.capitalize
+br
+- if source = @recipe.source
+  h4 Source
+  =source
+  br
+- if url = @recipe.url
+  =link_to url
+  br
+- if ingredients = @recipe.ingredients
+  pre=ingredients
+  br
+- if instructions = @recipe.instructions
+  pre=instructions
