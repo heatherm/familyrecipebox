@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_filter :require_login
 
   def index
-    @recipes = Recipe.where(user: current_user)
+    @recipes = Recipe.all.order(updated_at: :desc)
   end
 
   def new
