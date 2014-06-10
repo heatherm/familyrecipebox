@@ -1,15 +1,15 @@
-=link_to "< Back to my recipes", recipes_url
-h1=@recipe.title.capitalize
+=link_to text_with_icon('Back to my recipes', 'arrow-left'), recipes_url
+h2=@recipe.title.capitalize
 br
 - if source = @recipe.source
   h4 Source
   =source
-  br
 - if url = @recipe.url
-  =link_to url
-  br
+  h4 URL
+  =link_to text_with_icon(url, 'map-marker'), url
 - if ingredients = @recipe.ingredients
+  h4 Ingredients
   pre=ingredients
-  br
 - if instructions = @recipe.instructions
+  h4 Instructions
   pre=instructions

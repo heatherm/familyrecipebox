@@ -1,5 +1,5 @@
-=link_to "New Recipe", new_recipe_path
-h2 Your recipes
+=link_to text_with_icon('Add a new Recipe', 'cutlery'), new_recipe_path
+h2 Your Recipes
 -@recipes.each do |recipe|
- =link_to recipe.title, recipe_path(recipe)
+ =link_to text_with_icon(recipe.title, 'list-alt'), recipe_path(recipe)
  br
