@@ -2,6 +2,7 @@
 # Use 'createuser -s postgres' to create a general purpose db (super)user.
 
 development: &default
+  host: localhost
   adapter: postgresql
   encoding: unicode
   database: frb_development
