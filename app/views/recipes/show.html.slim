@@ -4,6 +4,9 @@ h2=@recipe.title.capitalize
 - if source = @recipe.source.presence
   h4 From
   =source
+- if url = @recipe.card_front_url.presence
+  h4 Front
+  = image_tag @recipe.card_front_url
 - if url = @recipe.url.presence
   h4 URL
   =link_to text_with_icon(url, 'map-marker'), url

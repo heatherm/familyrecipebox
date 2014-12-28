@@ -1,12 +1,12 @@
 class RecipesController < ApplicationController
   before_filter :require_login
+  before_filter :set_s3_url, only: [:new, :edit]
 
   def index
     @recipes = Recipe.all.order(updated_at: :desc)
   end
 
   def new
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @recipe = Recipe.new
   end
 
@@ -38,7 +38,11 @@ class RecipesController < ApplicationController
 
   private
 
+  def set_s3_url
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
+  end
+
   def recipe_params
-    params.require(:recipe).permit(:title, :source, :ingredients, :instructions, :url, :variations)
+    params.require(:recipe).permit(:title, :source, :ingredients, :instructions, :url, :variations, :card_front_url)
   end
 end

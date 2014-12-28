@@ -1,9 +1,4 @@
-= simple_form_for @recipe do |f|
-    = f.text_field :title, size: 60, label: "What do you call it?"
-    = f.text_field :source, size: 60, label: "Where did it come from?"
-    = f.text_field :url, size: 60, label: "URL"
-    = f.text_area :ingredients, cols: 60, rows: 7
-    = f.text_area :variations, cols: 60, rows: 7
-    = f.text_area :instructions, cols: 60, rows: 7
-    br
-    = f.submit "Add Recipe"
+= simple_form_for @recipe, html: {:"class" => "directUpload", :"data-s3-direct-post" => @s3_direct_post.url, "data-s3-direct-fields" => @s3_direct_post.fields.to_json, :"data-s3-direct-host" => @s3_direct_post.url.host} do |f|
+  = render :partial => 'form', :locals => {:f => f}
+  br
+  = f.submit "Add Recipe"
