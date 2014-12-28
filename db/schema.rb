@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611023512) do
+ActiveRecord::Schema.define(version: 20141228180416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140611023512) do
     t.text     "variations"
     t.datetime "last_made_at"
     t.integer  "effort"
+    t.string   "card_front_url"
   end
 
   create_table "users", force: true do |t|

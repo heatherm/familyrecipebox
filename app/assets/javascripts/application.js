@@ -11,9 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery.ui.widget
+//= require z.jquery.fileupload
 //= require foundation
-//= require turbolinks
-//= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).foundation();
