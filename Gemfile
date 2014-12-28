@@ -15,6 +15,7 @@ gem 'turbolinks'
 gem 'simple_form', '~> 3.1.0.rc1'
 gem 'uglifier'
 gem 'sorcery'
+gem 'aws-sdk'
 
 gem 'awesome_print'
 
